@@ -39,10 +39,9 @@ const randChoice = (arr) => {
 const people = [];
 
 for (let i = 1; i <= 20; i++) {
-  const firstName = (genderChoice = "female")
-    ? randChoice(femaleNames)
-    : randChoice(maleNames);
-
+  const genderChoice = randChoice(genders);
+  const firstName =
+    genderChoice === "female" ? randChoice(femaleNames) : randChoice(maleNames);
   const lastName = randChoice(lastNames);
   const age = Math.floor(Math.random() * 78) + 18;
   people.push({
